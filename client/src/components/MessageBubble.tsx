@@ -4,7 +4,7 @@ import { memo } from "react";
 function MessageBubble({
   msgTxt,
   variant = "secondary",
-  align = "start",
+  align = "justify-start",
 }: {
   msgTxt: string;
   variant?:
@@ -14,10 +14,10 @@ function MessageBubble({
     | "outline"
     | null
     | undefined;
-  align?: "start" | "end";
+  align?: "justify-start" | "justify-end";
 }) {
   return (
-    <div className={`flex items-center justify-${align} mx-2 my-1`}>
+    <div className={`flex items-center ${align} mx-2 my-1`}>
       <Badge className="w-fit" variant={variant}>
         {msgTxt}
       </Badge>
